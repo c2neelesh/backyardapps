@@ -1,0 +1,6 @@
+framework module Pods_thRED {
+  umbrella header "Pods-thRED-umbrella.h"
+
+  export *
+  module * { export * }
+}
