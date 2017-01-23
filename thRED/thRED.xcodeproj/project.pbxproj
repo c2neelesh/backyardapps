@@ -42,6 +42,7 @@
 		36AE1FD41E342A430053922A /* hbd.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 36AE1FCD1E3425D20053922A /* hbd.m4a */; };
 		36AE1FD51E342A470053922A /* prayer.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 36AE1FCE1E3425D20053922A /* prayer.m4a */; };
 		36AE1FD71E342C1A0053922A /* GiftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AE1FD61E342C1A0053922A /* GiftTableViewController.swift */; };
+		36D55D921E3631C80018CF6D /* RecordGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D55D911E3631C80018CF6D /* RecordGiftViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		36AE1FD01E34260F0053922A /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		36AE1FD21E34268B0053922A /* FirebaseSongHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseSongHandler.swift; sourceTree = "<group>"; };
 		36AE1FD61E342C1A0053922A /* GiftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftTableViewController.swift; sourceTree = "<group>"; };
+		36D55D911E3631C80018CF6D /* RecordGiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordGiftViewController.swift; sourceTree = "<group>"; };
 		38680EFB1E70BA25BF644ADC /* Pods-thred.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thred.release.xcconfig"; path = "Pods/Target Support Files/Pods-thred/Pods-thred.release.xcconfig"; sourceTree = "<group>"; };
 		C5A710F191DFAA1DB9506E6B /* Pods_thred.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_thred.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -127,6 +129,7 @@
 				3697F6DB1E3537A8004D5DD4 /* GifterTableViewController.swift */,
 				3697F6DF1E3550D9004D5DD4 /* PlayViewController.swift */,
 				3697F6EC1E359861004D5DD4 /* UserByEmailViewController.swift */,
+				36D55D911E3631C80018CF6D /* RecordGiftViewController.swift */,
 			);
 			name = "New Gift";
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				36AE1FCC1E3425190053922A /* LoadSongsHelperViewController.swift in Sources */,
 				3648504F1E3465A9004B73DE /* RecipientTableViewCell.swift in Sources */,
 				36AE1FA21E33CED40053922A /* AppDelegate.swift in Sources */,
+				36D55D921E3631C80018CF6D /* RecordGiftViewController.swift in Sources */,
 				364850481E343984004B73DE /* GiftCollectionViewCell.swift in Sources */,
 				36AE1FD11E34260F0053922A /* Song.swift in Sources */,
 				3697F6E81E357CE3004D5DD4 /* UserGift.swift in Sources */,
