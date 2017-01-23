@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 struct StoryboardObjects {
     static let authenticatedSegue = "authenticatedSegue"
 }
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet weak var giftsCollectionView: UICollectionView!
+    var myGifts = [UserGift]()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -24,7 +29,8 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
         FirebaseUserOperation.isUserAuthenticated { (firUser) in
             if let _ = firUser {
-
+                self.myGifts.removeAll()
+                self.fetchGiftsOf(uid: (FIRAuth.auth()?.currentUser?.uid)!)
             } else {
                 self.performSegue(withIdentifier: StoryboardObjects.authenticatedSegue, sender: nil)
             }
@@ -33,6 +39,32 @@ class HomeViewController: UIViewController {
 
     }
 
+    func fetchGiftsOf(uid: String) {
+        UserGift.observeUserGifts(.invited, uid) { (userGift) in
+            self.myGifts.append(userGift)
+            DispatchQueue.main.async {
+                self.giftsCollectionView?.reloadData()
+                self.view.setNeedsLayout()
+            }
+        }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return myGifts.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeGiftCell", for: indexPath) as! HomeCollectionViewCell
+        
+        Gift.observeGift(myGifts[indexPath.item].giftID) { (gift) in
+            cell.gift = gift
+        }
+
+        
+        return cell
+    }
     /*
     // MARK: - Navigation
 

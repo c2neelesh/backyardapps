@@ -46,8 +46,13 @@ class UserGift {
         completion(nil)
     }
     
-    class func observeUserGifts (_ uid: String, _ completion: @escaping (UserGift) -> Void) {
-        let userGiftReference = DatabaseReference.userGifts(uid: uid).reference()
+    class func observeUserGifts (_ type: GiftType, _ uid: String, _ completion: @escaping (UserGift) -> Void) {
+        let userGiftReference: FIRDatabaseReference!
+        
+        switch type {
+        case .invited: userGiftReference = DatabaseReference.userGifts(uid: uid).reference()
+        case .received: userGiftReference = DatabaseReference.myGifts(uid: uid).reference()
+        }
         
         userGiftReference.observe(.childAdded, with: { (snapshot) in
             //let _ = snapshot.value as? [String : Any] ?? [:]

@@ -21,7 +21,8 @@ class GifterTableViewCell: UITableViewCell {
     }
     
     func updateUI() {
-        userNameLabel.text = user!.name
+        let pending = user!.status == "pending" ? " 😴": ""
+        userNameLabel.text = "\(user!.name)\(pending)"
         FirebaseImageHandler.downloadImage(.profile, user!.uid) { (image, error) in
             if let _ = image {
                 self.profileImageView.image = image

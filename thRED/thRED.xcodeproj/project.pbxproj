@@ -13,6 +13,7 @@
 		3648504A1E345EB9004B73DE /* RecipientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364850491E345EB9004B73DE /* RecipientTableViewController.swift */; };
 		3648504F1E3465A9004B73DE /* RecipientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3648504E1E3465A9004B73DE /* RecipientTableViewCell.swift */; };
 		364850511E3471CF004B73DE /* GifterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364850501E3471CF004B73DE /* GifterCollectionViewCell.swift */; };
+		365F1D241E35B27C0081EA8E /* SecondaryGoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 365F1D231E35B27C0081EA8E /* SecondaryGoogleService-Info.plist */; };
 		3697F6DC1E3537A8004D5DD4 /* GifterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3697F6DB1E3537A8004D5DD4 /* GifterTableViewController.swift */; };
 		3697F6DE1E353850004D5DD4 /* GifterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3697F6DD1E353850004D5DD4 /* GifterTableViewCell.swift */; };
 		3697F6E01E3550D9004D5DD4 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3697F6DF1E3550D9004D5DD4 /* PlayViewController.swift */; };
@@ -20,6 +21,8 @@
 		3697F6E41E356FF3004D5DD4 /* Gift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3697F6E31E356FF3004D5DD4 /* Gift.swift */; };
 		3697F6E61E357070004D5DD4 /* Gifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3697F6E51E357070004D5DD4 /* Gifter.swift */; };
 		3697F6E81E357CE3004D5DD4 /* UserGift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3697F6E71E357CE3004D5DD4 /* UserGift.swift */; };
+		3697F6EB1E359266004D5DD4 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3697F6EA1E359266004D5DD4 /* HomeCollectionViewCell.swift */; };
+		3697F6ED1E359861004D5DD4 /* UserByEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3697F6EC1E359861004D5DD4 /* UserByEmailViewController.swift */; };
 		36AE1FA21E33CED40053922A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AE1FA11E33CED40053922A /* AppDelegate.swift */; };
 		36AE1FA41E33CED40053922A /* LoginRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AE1FA31E33CED40053922A /* LoginRegisterController.swift */; };
 		36AE1FA71E33CED40053922A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36AE1FA51E33CED40053922A /* Main.storyboard */; };
@@ -48,6 +51,7 @@
 		364850491E345EB9004B73DE /* RecipientTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientTableViewController.swift; sourceTree = "<group>"; };
 		3648504E1E3465A9004B73DE /* RecipientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientTableViewCell.swift; sourceTree = "<group>"; };
 		364850501E3471CF004B73DE /* GifterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifterCollectionViewCell.swift; sourceTree = "<group>"; };
+		365F1D231E35B27C0081EA8E /* SecondaryGoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SecondaryGoogleService-Info.plist"; sourceTree = "<group>"; };
 		3697F6DB1E3537A8004D5DD4 /* GifterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifterTableViewController.swift; sourceTree = "<group>"; };
 		3697F6DD1E353850004D5DD4 /* GifterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifterTableViewCell.swift; sourceTree = "<group>"; };
 		3697F6DF1E3550D9004D5DD4 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,8 @@
 		3697F6E31E356FF3004D5DD4 /* Gift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gift.swift; sourceTree = "<group>"; };
 		3697F6E51E357070004D5DD4 /* Gifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gifter.swift; sourceTree = "<group>"; };
 		3697F6E71E357CE3004D5DD4 /* UserGift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGift.swift; sourceTree = "<group>"; };
+		3697F6EA1E359266004D5DD4 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		3697F6EC1E359861004D5DD4 /* UserByEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserByEmailViewController.swift; sourceTree = "<group>"; };
 		36AE1F9E1E33CED40053922A /* thred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thred.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36AE1FA11E33CED40053922A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36AE1FA31E33CED40053922A /* LoginRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterController.swift; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 		364850461E343963004B73DE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3697F6EA1E359266004D5DD4 /* HomeCollectionViewCell.swift */,
 				364850471E343984004B73DE /* GiftCollectionViewCell.swift */,
 				3648504E1E3465A9004B73DE /* RecipientTableViewCell.swift */,
 				364850501E3471CF004B73DE /* GifterCollectionViewCell.swift */,
@@ -119,6 +126,7 @@
 				364850491E345EB9004B73DE /* RecipientTableViewController.swift */,
 				3697F6DB1E3537A8004D5DD4 /* GifterTableViewController.swift */,
 				3697F6DF1E3550D9004D5DD4 /* PlayViewController.swift */,
+				3697F6EC1E359861004D5DD4 /* UserByEmailViewController.swift */,
 			);
 			name = "New Gift";
 			sourceTree = "<group>";
@@ -155,6 +163,7 @@
 			children = (
 				36AE1FAD1E33CED40053922A /* Info.plist */,
 				36AE1FBC1E33F1450053922A /* GoogleService-Info.plist */,
+				365F1D231E35B27C0081EA8E /* SecondaryGoogleService-Info.plist */,
 				36AE1FA11E33CED40053922A /* AppDelegate.swift */,
 				36AE1FC01E33F48D0053922A /* Model */,
 				36AE1FB71E33E57D0053922A /* View */,
@@ -300,6 +309,7 @@
 				36AE1FA91E33CED40053922A /* Assets.xcassets in Resources */,
 				36AE1FD41E342A430053922A /* hbd.m4a in Resources */,
 				36AE1FA71E33CED40053922A /* Main.storyboard in Resources */,
+				365F1D241E35B27C0081EA8E /* SecondaryGoogleService-Info.plist in Resources */,
 				36AE1FD51E342A470053922A /* prayer.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +389,8 @@
 				36AE1FD71E342C1A0053922A /* GiftTableViewController.swift in Sources */,
 				36AE1FC81E3403C60053922A /* FirebaseImageHandler.swift in Sources */,
 				364850511E3471CF004B73DE /* GifterCollectionViewCell.swift in Sources */,
+				3697F6EB1E359266004D5DD4 /* HomeCollectionViewCell.swift in Sources */,
+				3697F6ED1E359861004D5DD4 /* UserByEmailViewController.swift in Sources */,
 				3697F6E01E3550D9004D5DD4 /* PlayViewController.swift in Sources */,
 				3697F6DC1E3537A8004D5DD4 /* GifterTableViewController.swift in Sources */,
 				3697F6E41E356FF3004D5DD4 /* Gift.swift in Sources */,
