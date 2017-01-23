@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginRegisterController: UIViewController {
+class LoginRegisterController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var loginRegisterControl: UISegmentedControl!
@@ -35,7 +35,14 @@ class LoginRegisterController: UIViewController {
         profileImageView.layer.masksToBounds = true
         profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectProfileImage)))
         profileImageView.isUserInteractionEnabled = true
+        
+        emailTextField.delegate = self
+        nameTextField.delegate = self
+        passwordTextField.delegate = self
+        reenterPasswordTextField.delegate = self
+        
         handleLoginRegisterControlChange(for: 0)
+        
     }
 
     func selectProfileImage() {
@@ -52,10 +59,12 @@ class LoginRegisterController: UIViewController {
             nameTextField.isHidden = true
             reenterPasswordTextField.isHidden = true
             profileImageView.isHidden = true
+            emailTextField.becomeFirstResponder()
         } else {
             nameTextField.isHidden = false
             reenterPasswordTextField.isHidden = false
             profileImageView.isHidden = false
+            nameTextField.becomeFirstResponder()
         }
     }
 
@@ -71,7 +80,7 @@ class LoginRegisterController: UIViewController {
         }
     }
     
-    private func login() {
+    func login() {
         let email = emailTextField.text
         let password = passwordTextField.text
         
@@ -89,7 +98,7 @@ class LoginRegisterController: UIViewController {
         }
     }
     
-    private func register() {
+    func register() {
         if emailTextField.text != "" && nameTextField.text != "" && (passwordTextField.text?.characters.count)! >= 6 && (reenterPasswordTextField.text?.characters.count)! >= 6 && profileImage != nil {
             
             let emailAddress = self.emailTextField.text!
@@ -121,6 +130,26 @@ class LoginRegisterController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print ("!23")
+        if textField == nameTextField  {
+            emailTextField.becomeFirstResponder()
+        } else if textField == emailTextField  {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            if loginRegisterControl.selectedSegmentIndex == 0 {
+                passwordTextField.resignFirstResponder()
+                login()
+            } else {
+                reenterPasswordTextField.becomeFirstResponder()
+            }
+        } else if textField == reenterPasswordTextField {
+            reenterPasswordTextField.resignFirstResponder()
+            register()
+        }
+        return true
     }
     
 }
