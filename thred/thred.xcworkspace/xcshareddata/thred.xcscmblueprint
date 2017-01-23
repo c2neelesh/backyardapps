@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "45F5A59EF2AC6A05B27C6999AFA675DCC8499CFE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "45F5A59EF2AC6A05B27C6999AFA675DCC8499CFE" : 9223372036854775807,
+    "041669095B4ED5252CA507726C21076BF644C5AF" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "16DBF308-AB2F-44A7-A095-C74A8124561C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "45F5A59EF2AC6A05B27C6999AFA675DCC8499CFE" : "backyardapps\/",
+    "041669095B4ED5252CA507726C21076BF644C5AF" : "backyardapps\/thred\/thred\/gameofchats%202\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "thred",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "thred\/thred.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:purelyswift\/gameofchats.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "041669095B4ED5252CA507726C21076BF644C5AF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/c2neelesh\/backyardapps.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "45F5A59EF2AC6A05B27C6999AFA675DCC8499CFE"
+    }
+  ]
+}

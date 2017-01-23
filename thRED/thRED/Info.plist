@@ -21,9 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>thRED would like to access your Camera. This will let you take a photo and upload to the database in the server</string>
+	<string>$(PRODUCT_NAME) would like to access your camera. This will let you set a profile image.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>thRED would like to access your Photo Library. This will let you choose a photo and upload to the database in the server</string>
+	<string>$(PRODUCT_NAME) would like to access your photo library. This will let you set a profile image.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

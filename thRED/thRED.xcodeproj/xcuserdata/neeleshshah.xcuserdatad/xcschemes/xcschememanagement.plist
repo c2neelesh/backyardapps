@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>thRED.xcscheme</key>
+		<key>thred.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>364328EE1E24659E00A0260E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>364329051E24659E00A0260E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>364329101E24659E00A0260E</key>
+		<key>36AE1F9D1E33CED40053922A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

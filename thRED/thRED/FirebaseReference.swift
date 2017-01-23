@@ -1,12 +1,10 @@
 //
 //  FirebaseReference.swift
-//  thRED
+//  thred
 //
-//  Created by Neelesh Shah on 1/10/17.
+//  Created by Neelesh Shah on 1/21/17.
 //  Copyright © 2017 C2 Consulting, Inc. All rights reserved.
 //
-
-// ALL PRAYER REFERENCES FOR FUTURE RELEASE
 
 import Foundation
 import Firebase
@@ -14,18 +12,18 @@ import Firebase
 enum DatabaseReference {
     case root
     case user(uid: String)
+    case users
     case song(uid: String)
-    case songLibrary
+    case songs
     
-    case prayer(uid: String)
-    case prayerLibrary
+    case gift(uid: String)
+    case gifts
     
-    case event(uid: String)
-    case gifters(eventid: String)
-    case gifter(eventid: String, gifterid: String)
-    case allEvents
-    case userEvent(uid: String)
-    case userInvited(uid: String)
+    case gifters(giftid: String)
+    case gifter(giftid: String, gifterid: String)
+    
+    case userGifts(uid: String)
+    case myGifts(uid: String)
 
     private var rootRef: FIRDatabaseReference {
         return FIRDatabase.database().reference()
@@ -34,20 +32,20 @@ enum DatabaseReference {
     private var path: String {
         switch self {
         case .root: return ""
-        case .user(let uid): return "user/\(uid)"
+        case .user(let uid):return "users/\(uid)/profile"
+        case .users: return "users"
             
-        case .song(let uid): return "songLibrary/\(uid)"
-        case .songLibrary: return "songLibrary"
+        case .song(let uid): return "songs/\(uid)"
+        case .songs: return "songs"
             
-        case .prayer(let uid): return "prayerLibrary/\(uid)"
-        case .prayerLibrary: return "prayerLibrary"
+        case .gift(let uid): return "gifts/\(uid)"
+        case .gifts: return "gifts"
             
-        case .event(let uid): return "event/\(uid)"
-        case .gifters(let eventid): return "/event/\(eventid)/gifters"
-        case .gifter(let eventid, let uid): return "/event/\(eventid)/gifters/\(uid)"
-        case .allEvents: return "event"
-        case .userEvent(let uid): return "userEvent/\(uid)"
-        case .userInvited(let uid): return "userInvited/\(uid)"
+        case .gifters(let giftid): return "/gifts/\(giftid)/gifters"
+        case .gifter(let giftid, let gifterid): return "/gifts/\(giftid)/gifters/\(gifterid)"
+            
+        case .userGifts(let uid): return "users/\(uid)/gifts/invited"
+        case .myGifts(let uid): return "users/\(uid)/gifts/received"
         }
         
     }
@@ -59,13 +57,11 @@ enum DatabaseReference {
 
 enum StorageReference {
     case root
-    case songImage
-    case prayerImage
-    case profileImage
-    case songLibrary
-    case prayerLibrary
-    case gifterSong
-
+    case songImages
+    case profileImages
+    case songs
+    case giftedSongs
+    
     
     private var storageRef: FIRStorageReference {
         return FIRStorage.storage().reference()
@@ -74,12 +70,10 @@ enum StorageReference {
     private var path: String {
         switch self {
         case .root: return ""
-        case .songImage: return "songImage"
-        case .prayerImage: return "prayerImage"
-        case .profileImage: return "profileImage"
-        case .songLibrary: return "songLibrary"
-        case .prayerLibrary: return "prayerLibrary"
-        case .gifterSong: return "gifterSong"
+        case .songImages: return "songImages"
+        case .profileImages: return "profileImages"
+        case .songs: return "songs"
+        case .giftedSongs: return "giftedSongs"
         }
     }
     

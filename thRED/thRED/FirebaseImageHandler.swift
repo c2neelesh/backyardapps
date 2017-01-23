@@ -1,8 +1,8 @@
 //
 //  FirebaseImageHandler.swift
-//  thRED
+//  thred
 //
-//  Created by Neelesh Shah on 1/10/17.
+//  Created by Neelesh Shah on 1/21/17.
 //  Copyright © 2017 C2 Consulting, Inc. All rights reserved.
 //
 
@@ -12,7 +12,6 @@ import Firebase
 enum ImageType {
     case profile
     case song
-    case prayer
 }
 
 class FirebaseImageHandler {
@@ -32,17 +31,16 @@ extension FirebaseImageHandler {
     func saveImage(_ type: ImageType, _ uid: String, _ completion: @escaping (Error?) -> Void) {
         
         let resizedImage = image.resizedForFirebase(withHeight: 800)
-        let imageData = UIImageJPEGRepresentation(resizedImage, 0.9)
+        let imageData = UIImageJPEGRepresentation(resizedImage, 0.5)
         
         let metadata = FIRStorageMetadata()
         metadata.contentType = "image/jpeg"
         
         switch type {
-        case .profile: ref = StorageReference.profileImage.reference().child(uid)
-        case .song: ref = StorageReference.songImage.reference().child(uid)
-        case .prayer: ref = StorageReference.prayerImage.reference().child(uid)
+        case .profile: ref = StorageReference.profileImages.reference().child(uid)
+        case .song: ref = StorageReference.songImages.reference().child(uid)
         }
-    
+        
         //ref = StorageReference.profileImage.reference().child(userUID)
         downloadURLString = ref.description
         
@@ -57,13 +55,12 @@ extension FirebaseImageHandler {
         let classRef: FIRStorageReference!
         
         switch type {
-        case .profile: classRef = StorageReference.profileImage.reference().child(uid)
-        case .song: classRef = StorageReference.songImage.reference().child(uid)
-        case .prayer: classRef = StorageReference.prayerImage.reference().child(uid)
+        case .profile: classRef = StorageReference.profileImages.reference().child(uid)
+        case .song: classRef = StorageReference.songImages.reference().child(uid)
         }
         
         //StorageReference.profileImage.reference().child(userUID).data(withMaxSize: 1 * 1024 * 1024) { (imageData, error) in
-        classRef.data(withMaxSize: 1 * 1024 * 1024) { (imageData, error) in
+        classRef.data(withMaxSize: 10 * 1024 * 1024) { (imageData, error) in
             if error == nil && imageData != nil {
                 let image = UIImage(data: imageData!)
                 completion (image ,nil)
@@ -93,3 +90,4 @@ private extension UIImage {
         return resizedImage!
     }
 }
+

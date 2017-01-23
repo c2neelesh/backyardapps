@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "364328EE1E24659E00A0260E"
-               BuildableName = "thRED.app"
-               BlueprintName = "thRED"
-               ReferencedContainer = "container:thRED.xcodeproj">
+               BlueprintIdentifier = "36AE1F9D1E33CED40053922A"
+               BuildableName = "thred.app"
+               BlueprintName = "thred"
+               ReferencedContainer = "container:thred.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,34 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "364329051E24659E00A0260E"
-               BuildableName = "thREDTests.xctest"
-               BlueprintName = "thREDTests"
-               ReferencedContainer = "container:thRED.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "364329101E24659E00A0260E"
-               BuildableName = "thREDUITests.xctest"
-               BlueprintName = "thREDUITests"
-               ReferencedContainer = "container:thRED.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "364328EE1E24659E00A0260E"
-            BuildableName = "thRED.app"
-            BlueprintName = "thRED"
-            ReferencedContainer = "container:thRED.xcodeproj">
+            BlueprintIdentifier = "36AE1F9D1E33CED40053922A"
+            BuildableName = "thred.app"
+            BlueprintName = "thred"
+            ReferencedContainer = "container:thred.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,19 +55,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "364328EE1E24659E00A0260E"
-            BuildableName = "thRED.app"
-            BlueprintName = "thRED"
-            ReferencedContainer = "container:thRED.xcodeproj">
+            BlueprintIdentifier = "36AE1F9D1E33CED40053922A"
+            BuildableName = "thred.app"
+            BlueprintName = "thred"
+            ReferencedContainer = "container:thred.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "disable"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -101,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "364328EE1E24659E00A0260E"
-            BuildableName = "thRED.app"
-            BlueprintName = "thRED"
-            ReferencedContainer = "container:thRED.xcodeproj">
+            BlueprintIdentifier = "36AE1F9D1E33CED40053922A"
+            BuildableName = "thred.app"
+            BlueprintName = "thred"
+            ReferencedContainer = "container:thred.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

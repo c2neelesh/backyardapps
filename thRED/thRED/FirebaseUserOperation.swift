@@ -1,10 +1,11 @@
 //
 //  FirebaseUserOperation.swift
-//  thRED
+//  thred
 //
-//  Created by Neelesh Shah on 1/10/17.
+//  Created by Neelesh Shah on 1/21/17.
 //  Copyright © 2017 C2 Consulting, Inc. All rights reserved.
 //
+
 
 import Foundation
 import Firebase
@@ -21,8 +22,8 @@ class FirebaseUserOperation {
         })
     }
     
-    static func signIn(emailAddress: String, password: String ,completion: @escaping (FIRUser?, Error?) -> Void) {
-        FIRAuth.auth()?.signIn(withEmail: emailAddress, password: password, completion: { (firUser, error) in
+    static func signIn(email: String, password: String ,completion: @escaping (FIRUser?, Error?) -> Void) {
+        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (firUser, error) in
             if error == nil {
                 completion(firUser, nil)
             } else {
@@ -39,13 +40,13 @@ class FirebaseUserOperation {
         }
     }
     
-    static func createUser(emailAddress: String, fullName: String, password: String , profileImage: UIImage ,completion: @escaping (FIRUser?, Error?) -> Void) {
-        FIRAuth.auth()?.createUser(withEmail: emailAddress, password: password, completion: { (firUser, error) in
+    static func createUser(email: String, name: String, password: String , profileImage: UIImage ,completion: @escaping (FIRUser?, Error?) -> Void) {
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (firUser, error) in
             if error == nil {
-                let newUser = User(uid: (firUser?.uid)!, fullName: fullName, status: "created", profileImage: profileImage)
+                let newUser = User(uid: (firUser?.uid)!, name: name, status: "created", profileImage: profileImage)
                 newUser.save(completion: { (error) in
                     if error == nil {
-                        signIn(emailAddress: emailAddress, password: password, completion: { (firUser, error) in
+                        signIn(email: email, password: password, completion: { (firUser, error) in
                             if error == nil {
                                 completion(firUser, nil)
                             } else {
@@ -75,7 +76,10 @@ class FirebaseUserOperation {
             
             let _ = currentUserRef.observe(.value, with: { (snapshot) in
                 let dict = snapshot.value as? [String : Any] ?? [:]
-                let user = User(userDictionaryFromSnapshot: dict)
+                //let userProfile = dict["profile"] as? [String : Any] ?? [:]
+
+                let user = User(userDictionaryFromSnapshot: dict, key: firUser.uid)
+                //let user = User(userDictionaryFromSnapshot: userProfile, key: snapshot.key)
                 
                 var userProfileImage: UIImage?
                 FirebaseImageHandler.downloadImage(ImageType.profile, firUser.uid, completion: { (image, error) in
@@ -84,14 +88,18 @@ class FirebaseUserOperation {
                         userProfileImage = image
                     } else {
                         //print ("********* \(error?.localizedDescription)")
-                        userProfileImage = #imageLiteral(resourceName: "icon-defaultAvatar")
+                        userProfileImage = #imageLiteral(resourceName: "icon-person")
                     }
                     user.profileImage = userProfileImage
                     completion(firUser.email, firUser.uid, user)
                 })
             })
+//            User.observeUser(firUser.uid, { (user) in
+//                completion(firUser.email, firUser.uid, user)
+//            })
         } else {
             completion(nil, nil, nil)
         }
     }
+    
 }

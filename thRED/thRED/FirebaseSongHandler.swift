@@ -1,8 +1,8 @@
 //
 //  FirebaseSongHandler.swift
-//  thRED
+//  thred
 //
-//  Created by Neelesh Shah on 1/10/17.
+//  Created by Neelesh Shah on 1/21/17.
 //  Copyright © 2017 C2 Consulting, Inc. All rights reserved.
 //
 
@@ -11,9 +11,8 @@ import Foundation
 import Firebase
 
 enum SongType {
-    case songLibrary
-    case prayerLibrary
-    case gifter
+    case song
+    case giftedSong
 }
 
 class FirebaseSongHandler {
@@ -35,9 +34,8 @@ extension FirebaseSongHandler {
         metadata.contentType = "audio/mpeg"
         
         switch type {
-        case .songLibrary: ref = StorageReference.songLibrary.reference().child(uid)
-        case .prayerLibrary: ref = StorageReference.prayerLibrary.reference().child(uid)
-        case .gifter: ref = StorageReference.gifterSong.reference().child(uid)
+        case .song: ref = StorageReference.songs.reference().child(uid)
+        case .giftedSong: ref = StorageReference.giftedSongs.reference().child(uid)
         }
         
         //ref = StorageReference.songLibrary.reference().child(uid)
@@ -53,7 +51,7 @@ extension FirebaseSongHandler {
         let metadata = FIRStorageMetadata()
         metadata.contentType = "audio/mpeg"
         
-        ref = StorageReference.songLibrary.reference().child(uid)
+        ref = StorageReference.songs.reference().child(uid)
         downloadURLString = ref.description
         
         let url = URL(fileReferenceLiteralResourceName: fileName)
@@ -66,9 +64,8 @@ extension FirebaseSongHandler {
         let classRef: FIRStorageReference!
         
         switch type {
-        case .songLibrary: classRef = StorageReference.songLibrary.reference().child(uid)
-        case .prayerLibrary: classRef = StorageReference.songLibrary.reference().child(uid)
-        case .gifter: classRef = StorageReference.gifterSong.reference().child(uid)
+        case .song: classRef = StorageReference.songs.reference().child(uid)
+        case .giftedSong: classRef = StorageReference.giftedSongs.reference().child(uid)
         }
         
         //StorageReference.songLibrary.reference().child(uid).data(withMaxSize: 10 * 1024 * 1024) { (songData, error) in
@@ -83,5 +80,6 @@ extension FirebaseSongHandler {
     }
     
 }
+
 
 
