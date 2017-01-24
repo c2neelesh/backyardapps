@@ -53,9 +53,11 @@ class UserGift {
         case .invited: userGiftReference = DatabaseReference.userGifts(uid: uid).reference()
         case .received: userGiftReference = DatabaseReference.myGifts(uid: uid).reference()
         }
-        
+        userGiftReference.removeAllObservers()
+
         userGiftReference.observe(.childAdded, with: { (snapshot) in
             //let _ = snapshot.value as? [String : Any] ?? [:]
+            print("snap: \(userGiftReference.description) \(snapshot.key)")
             completion(UserGift(userID: uid, giftID: snapshot.key))
             
         })
