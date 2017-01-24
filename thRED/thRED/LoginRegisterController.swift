@@ -133,7 +133,7 @@ class LoginRegisterController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print ("!23")
+        //print ("!23")
         if textField == nameTextField  {
             emailTextField.becomeFirstResponder()
         } else if textField == emailTextField  {

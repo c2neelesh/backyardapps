@@ -57,7 +57,7 @@ class UserGift {
 
         userGiftReference.observe(.childAdded, with: { (snapshot) in
             //let _ = snapshot.value as? [String : Any] ?? [:]
-            print("snap: \(userGiftReference.description) \(snapshot.key)")
+            //print("snap: \(userGiftReference.description) \(snapshot.key)")
             completion(UserGift(userID: uid, giftID: snapshot.key))
             
         })

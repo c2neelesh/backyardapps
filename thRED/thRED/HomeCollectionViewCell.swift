@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeCollectionViewCell: UICollectionViewCell {
     
@@ -29,6 +30,15 @@ class HomeCollectionViewCell: UICollectionViewCell {
         let songid = gift?.giftSongID
         //self.giftImageView.image =  #imageLiteral(resourceName: "happybirthday")
         giftNameLabel.text = gift!.name
+        
+        if gift?.recipientID != FIRAuth.auth()?.currentUser?.uid {
+            User.observeUser((gift?.recipientID)!) { (recipient) in
+                self.giftNameLabel.text = "\(self.gift!.name) to \(recipient.name)"
+            }
+        } else {
+            
+        }
+        
         FirebaseImageHandler.downloadImage(ImageType.song, songid!, completion: { (image, error) in
             if let image = image {
                 self.giftImageView.image = image

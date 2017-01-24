@@ -68,9 +68,10 @@ class User {
         let usersRef = DatabaseReference.user(uid: uid).reference()
         
         usersRef.observe(.value, with: { (snapshot) in
+            
             let user = snapshot.value as? [String : Any] ?? [:]
-            let userProfile = user["profile"] as? [String : Any] ?? [:]
-            completion(User(userDictionaryFromSnapshot: userProfile, key: snapshot.key))
+            //let userProfile = user["profile"] as? [String : Any] ?? [:]
+            completion(User(userDictionaryFromSnapshot: user, key: snapshot.key))
             
         })
     }
