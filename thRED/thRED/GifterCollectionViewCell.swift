@@ -20,10 +20,19 @@ class GifterCollectionViewCell: UICollectionViewCell {
     }
     
     func updateUI() {
-        gifterImageView.layer.cornerRadius = 10 // gifterImageView.layer.frame.width / 2.0
+        gifterImageView.layer.cornerRadius = 10
         gifterImageView.layer.masksToBounds = true
-        gifterImageView.image = gifter!.profileImage
-        gifterNameLabel.text = gifter?.name
+        
+        FirebaseImageHandler.downloadImage(.profile, (gifter?.uid)!, completion: { (image, error) in
+            if let _ = image {
+                self.gifterImageView.image = image
+                //self.view.setNeedsLayout()
+            }
+        })
+        
+        //gifterImageView.image = gifter!.profileImage
+        
+        gifterNameLabel.text = gifter!.name
     }
     
 }

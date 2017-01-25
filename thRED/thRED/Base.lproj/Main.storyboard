@@ -260,6 +260,7 @@
                                         <connections>
                                             <outlet property="giftImageView" destination="ITb-Fl-rx0" id="PWe-n8-JjD"/>
                                             <outlet property="giftNameLabel" destination="rLd-Jj-j6d" id="L1w-OL-Y0M"/>
+                                            <segue destination="7cK-Ih-1Lr" kind="show" identifier="editGiftSegue" id="lFH-oP-aWc"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -296,7 +297,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6Go-hz-Acc">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="7cK-Ih-1Lr" kind="show" id="9fd-zh-ISJ"/>
+                                <segue destination="7cK-Ih-1Lr" kind="show" identifier="createGiftSegue" id="9fd-zh-ISJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -319,7 +320,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="PICK A GIFT (SONG OR PRAYER)" id="OCP-rv-fBc">
+                            <tableViewSection headerTitle="GIFT (SONG OR PRAYER)" id="OCP-rv-fBc">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="kUB-zd-dOd">
                                         <rect key="frame" x="0.0" y="56" width="375" height="100"/>
@@ -361,7 +362,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="PICK OR ENTER A RECIPIENT" id="zWS-HX-t9P">
+                            <tableViewSection headerTitle="RECIPIENT" id="zWS-HX-t9P">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="cCr-bj-98M">
                                         <rect key="frame" x="0.0" y="213" width="375" height="100"/>
@@ -403,7 +404,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="PICK GIFTERS" id="5du-cj-uq5">
+                            <tableViewSection headerTitle="GIFTERS" id="5du-cj-uq5">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Hoh-Y5-VEW">
                                         <rect key="frame" x="0.0" y="370" width="375" height="100"/>
@@ -548,11 +549,14 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="addGifterImageView" destination="W5Z-hr-ioI" id="tEP-vx-TAv"/>
                         <outlet property="giftImageView" destination="AD3-Ox-6IO" id="CEu-hm-Fa1"/>
                         <outlet property="giftNameLabel" destination="nz5-U8-WeU" id="mUG-aw-KRZ"/>
                         <outlet property="gifterCollectionView" destination="UhT-p8-6hj" id="Ir4-Dw-82R"/>
                         <outlet property="recipientImageView" destination="twU-8m-Cns" id="fY4-L4-UPr"/>
                         <outlet property="recipientNameLabel" destination="9az-Ua-kGR" id="3cg-90-XTU"/>
+                        <outlet property="recordOrPlayButton" destination="jBD-eX-IcY" id="exC-za-u68"/>
+                        <outlet property="sendButton" destination="FbZ-ON-BtX" id="6cl-xB-n98"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="847-gv-olH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1455,6 +1459,7 @@
         <image name="thredlogo" width="125" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="9fd-zh-ISJ"/>
         <segue reference="hkE-j8-dWK"/>
     </inferredMetricsTieBreakers>
 </document>

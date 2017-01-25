@@ -95,14 +95,24 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         return cell
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "editGiftSegue" {
+            //print ("2 ****** \(segue.destination.debugDescription)")
+            let destinationVC = segue.destination as! GiftTableViewController
+            let cell = sender as! HomeCollectionViewCell
+            destinationVC.gift = cell.gift
+            destinationVC.navigationItem.title = "Record your song"
+        } else if segue.identifier == "createGiftSegue"{
+            let destinationVC = segue.destination as! GiftTableViewController
+            //let cell = sender as! HomeCollectionViewCell
+            //destinationVC.gift = cell.gift
+            destinationVC.navigationItem.title = "Gift Song or Prayer"
+        }
     }
-    */
+    
 
 }

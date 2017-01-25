@@ -34,7 +34,7 @@ class GiftCollectionViewCell: UICollectionViewCell {
     @IBAction func selectButtonTouched() {
         giftTableViewController?.giftNameLabel.text = song!.name
         giftTableViewController?.giftImageView.image = song?.songImage
-        giftTableViewController?.gift = song
+        giftTableViewController?.song = song
         giftCollectionViewController?.dismiss(animated: true, completion: nil)
     }
 }

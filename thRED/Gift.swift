@@ -77,6 +77,8 @@ class Gift {
     class func observeGift (_ uid: String, _ completion: @escaping (Gift) -> Void) {
         let giftReference = DatabaseReference.gift(uid: uid).reference()
         
+        giftReference.removeAllObservers()
+        
         giftReference.observe(.value, with: { (snapshot) in
             let gift = snapshot.value as? [String : Any] ?? [:]
             completion(Gift(giftDictionaryFromSnapshot: gift, key: snapshot.key))

@@ -36,7 +36,6 @@ class Gifter {
         self.song = song
     }
     
-    
     // MARK: - Support functions
     func toDictionary() -> [String : Any] {
         
@@ -47,26 +46,30 @@ class Gifter {
             "songURL": ""
         ]
     }
-    /*
-     init(gifterDictionaryFromSnapshot: [String : Any], key:String) {
-     self.uid = key //userDictionaryFromSnapshot["uid"] as! String
-     self.status = gifterDictionaryFromSnapshot["status"] as! String
-     self.primary = gifterDictionaryFromSnapshot["primary"] as! String
-     let dateString = gifterDictionaryFromSnapshot["date"] as! String
-     let dateFormatter = DateFormatter()
-     dateFormatter.dateStyle = .medium
-     self.date = dateFormatter.date(from: dateString)!
-     
-     if let _ = gifterDictionaryFromSnapshot["songURL"] {
-     FirebaseSongHandler.downloadGifterSong(uid: key, completion: { (songData, error) in
-     if let goodSong = songData {
-     self.song = goodSong
-     self.setupAudioPlayer()
-     }
-     })
-     }
-     }
-     */
+
+    init(gifterDictionaryFromSnapshot: [String : Any], key:String, giftID: String) {
+        
+        self.uid = key //userDictionaryFromSnapshot["uid"] as! String
+        self.giftID = giftID
+        self.status = gifterDictionaryFromSnapshot["status"] as! String
+        self.primary = gifterDictionaryFromSnapshot["primary"] as! String
+        
+        //let dateString = gifterDictionaryFromSnapshot["date"] as! String
+        //let dateFormatter = DateFormatter()
+        //dateFormatter.dateStyle = .medium
+        //self.date = dateFormatter.date(from: dateString)!
+        
+        self.date = Date()
+        
+        if let _ = gifterDictionaryFromSnapshot["songURL"] {
+            FirebaseSongHandler.downloadSong(type: .song , uid: key, completion: { (songData, error) in
+                if let goodSong = songData {
+                    self.song = goodSong
+                }
+            })
+        }
+    }
+ 
     
     func save(giftID: String, completion: @escaping (String?) -> Void) {
         let gifterRef = DatabaseReference.gifter(giftid: giftID, gifterid: uid).reference()
@@ -78,6 +81,18 @@ class Gifter {
         completion(gifterRef.key)
     }
     
+    class func observeGifters (_ uid: String, _ completion: @escaping (Gifter) -> Void) {
+        let giftersReference = DatabaseReference.gifters(giftid: uid).reference()
+        
+        giftersReference.removeAllObservers()
+        
+        giftersReference.observe(.childAdded, with: { (snapshot) in
+            let gifter = snapshot.value as? [String : Any] ?? [:]
+            
+            completion(Gifter(gifterDictionaryFromSnapshot: gifter, key: snapshot.key, giftID: uid))
+            
+        })
+    }
     
 }
 

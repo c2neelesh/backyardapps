@@ -27,15 +27,20 @@ class User {
         self.uid = key //userDictionaryFromSnapshot["uid"] as! String
         self.name = userDictionaryFromSnapshot["name"] as! String
         self.status = userDictionaryFromSnapshot["status"] as! String
+        
+        self.profileImage = #imageLiteral(resourceName: "icon-person")
+        /*
         if let _ = userDictionaryFromSnapshot["profileImageURL"] {
+            
             FirebaseImageHandler.downloadImage(ImageType.profile, self.uid, completion: { (image, error) in
                 if image != nil {
-                    self.profileImage = image
+                        self.profileImage = image
                 } else {
                     self.profileImage = #imageLiteral(resourceName: "icon-person")
                 }
             })
         }
+        */
     }
     
     // MARK: - Support functions
@@ -66,18 +71,21 @@ class User {
     
     class func observeUser (_ uid: String, _ completion: @escaping (User) -> Void) {
         let usersRef = DatabaseReference.user(uid: uid).reference()
+        usersRef.removeAllObservers()
         
         usersRef.observe(.value, with: { (snapshot) in
             
             let user = snapshot.value as? [String : Any] ?? [:]
             //let userProfile = user["profile"] as? [String : Any] ?? [:]
-            completion(User(userDictionaryFromSnapshot: user, key: snapshot.key))
+            completion(User(userDictionaryFromSnapshot: user, key: uid))
             
         })
     }
     // Short cut
     class func observeUsers (_ completion: @escaping (User) -> Void) {
         let usersRef = DatabaseReference.users.reference()
+        
+        usersRef.removeAllObservers()
         
         usersRef.observe(.childAdded, with: { (snapshot) in
             let user = snapshot.value as? [String : Any] ?? [:]

@@ -155,6 +155,8 @@ class Song {
     class func observeSongLibrary (_ completion: @escaping (Song) -> Void) {
         let songReference = DatabaseReference.songs.reference()
         
+        songReference.removeAllObservers()
+        
         songReference.observe(.childAdded, with: { (snapshot) in
             let song = snapshot.value as? [String : Any] ?? [:]
             completion(Song(songDictionaryFromSnapshot: song, key: snapshot.key))
@@ -164,6 +166,8 @@ class Song {
     
     class func observeSong (_ uid: String, _ completion: @escaping (Song) -> Void) {
         let songReference = DatabaseReference.song(uid: uid).reference()
+        
+        songReference.removeAllObservers()
         
         songReference.observe(.value, with: { (snapshot) in
             let song = snapshot.value as? [String : Any] ?? [:]
