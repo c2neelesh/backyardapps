@@ -18,6 +18,7 @@ class GiftTableViewController: UITableViewController, UICollectionViewDelegate, 
     @IBOutlet weak var addGifterImageView: UIImageView!
     @IBOutlet weak var gifterCollectionView: UICollectionView!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var inviteButton: UIButton!
     @IBOutlet weak var recordOrPlayButton: UIButton!
     
     var gift: Gift?
@@ -46,15 +47,16 @@ class GiftTableViewController: UITableViewController, UICollectionViewDelegate, 
         super.viewDidAppear(animated)
 
         if gift != nil {
-            
+            self.inviteButton.isHidden = true
+            self.sendButton.isHidden = false
+            self.addGifterImageView.isHidden = true
+            //
             if (gift!.recipientID == FIRAuth.auth()?.currentUser?.uid) {
                 self.navigationItem.title = "Play to enjoy your gift"
                 self.recordOrPlayButton.setTitle("Play (wip)", for: .normal)
+                self.sendButton.isHidden = true
             }
-            
-            self.sendButton.isHidden = true
-            self.addGifterImageView.isHidden = true
-            
+            //
             Song.observeSong((gift?.giftSongID)!, { song in
                 self.song = song
                 FirebaseImageHandler.downloadImage(.song, self.gift!.giftSongID, completion: { (image, error) in
@@ -67,6 +69,7 @@ class GiftTableViewController: UITableViewController, UICollectionViewDelegate, 
                     }
                 })
             })
+            //
             User.observeUser(gift!.recipientID, { (user) in
                 self.recipientNameLabel.text = user.name
                 FirebaseImageHandler.downloadImage(.profile, (self.gift?.recipientID)!, completion: { (image, error) in
@@ -77,6 +80,7 @@ class GiftTableViewController: UITableViewController, UICollectionViewDelegate, 
                     }
                 })
             })
+            //
             if self.gifters.count == 0 {
                 Gifter.observeGifters((gift?.uid)!, { (gifter) in
                     let userid = gifter.uid
@@ -90,6 +94,8 @@ class GiftTableViewController: UITableViewController, UICollectionViewDelegate, 
             
             
         } else {
+            self.sendButton.isHidden = true
+            self.inviteButton.isHidden = false
             self.gifterCollectionView.reloadData()
             self.view.setNeedsLayout()
         }
@@ -144,4 +150,18 @@ class GiftTableViewController: UITableViewController, UICollectionViewDelegate, 
             }
         }
     }
+    
+    @IBAction func send() {
+        
+        // get gift reference
+        // set status
+        // set recipient gift received node
+        // send notif
+        Gift.send(uid: (gift!.uid)) { (error) in
+            //if error == nil {
+                _ = self.navigationController?.popViewController(animated: true)
+            //}
+        }
+    }
+
 }

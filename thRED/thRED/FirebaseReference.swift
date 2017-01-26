@@ -24,6 +24,8 @@ enum DatabaseReference {
     
     case userGifts(uid: String)
     case myGifts(uid: String)
+    
+    case userNotifications(userid: String) // some above must be userids too
 
     private var rootRef: FIRDatabaseReference {
         return FIRDatabase.database().reference()
@@ -46,6 +48,8 @@ enum DatabaseReference {
             
         case .userGifts(let uid): return "users/\(uid)/gifts/invited"
         case .myGifts(let uid): return "users/\(uid)/gifts/received"
+            
+        case .userNotifications(let userid): return "/users/\(userid)/notifications"
         }
         
     }

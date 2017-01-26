@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		03D9D44DC75F642572A5C45F /* Pods_thred.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A710F191DFAA1DB9506E6B /* Pods_thred.framework */; };
+		361F0E5E1E3953230006B2E1 /* InboxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361F0E5D1E3953230006B2E1 /* InboxTableViewController.swift */; };
+		361F0E601E395A6D0006B2E1 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361F0E5F1E395A6D0006B2E1 /* NotificationTableViewCell.swift */; };
 		364850451E3437A7004B73DE /* GiftCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364850441E3437A7004B73DE /* GiftCollectionViewController.swift */; };
 		364850481E343984004B73DE /* GiftCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364850471E343984004B73DE /* GiftCollectionViewCell.swift */; };
 		3648504A1E345EB9004B73DE /* RecipientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364850491E345EB9004B73DE /* RecipientTableViewController.swift */; };
 		3648504F1E3465A9004B73DE /* RecipientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3648504E1E3465A9004B73DE /* RecipientTableViewCell.swift */; };
 		364850511E3471CF004B73DE /* GifterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364850501E3471CF004B73DE /* GifterCollectionViewCell.swift */; };
+		364D0BC21E38DDF7004091E2 /* UserNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364D0BC11E38DDF7004091E2 /* UserNotifications.swift */; };
 		365F1D241E35B27C0081EA8E /* SecondaryGoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 365F1D231E35B27C0081EA8E /* SecondaryGoogleService-Info.plist */; };
 		3697F6DC1E3537A8004D5DD4 /* GifterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3697F6DB1E3537A8004D5DD4 /* GifterTableViewController.swift */; };
 		3697F6DE1E353850004D5DD4 /* GifterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3697F6DD1E353850004D5DD4 /* GifterTableViewCell.swift */; };
@@ -47,11 +50,14 @@
 
 /* Begin PBXFileReference section */
 		01A8516A7D2481810FCDEFB4 /* Pods-thred.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-thred.debug.xcconfig"; path = "Pods/Target Support Files/Pods-thred/Pods-thred.debug.xcconfig"; sourceTree = "<group>"; };
+		361F0E5D1E3953230006B2E1 /* InboxTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxTableViewController.swift; sourceTree = "<group>"; };
+		361F0E5F1E395A6D0006B2E1 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		364850441E3437A7004B73DE /* GiftCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftCollectionViewController.swift; sourceTree = "<group>"; };
 		364850471E343984004B73DE /* GiftCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftCollectionViewCell.swift; sourceTree = "<group>"; };
 		364850491E345EB9004B73DE /* RecipientTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientTableViewController.swift; sourceTree = "<group>"; };
 		3648504E1E3465A9004B73DE /* RecipientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientTableViewCell.swift; sourceTree = "<group>"; };
 		364850501E3471CF004B73DE /* GifterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifterCollectionViewCell.swift; sourceTree = "<group>"; };
+		364D0BC11E38DDF7004091E2 /* UserNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotifications.swift; sourceTree = "<group>"; };
 		365F1D231E35B27C0081EA8E /* SecondaryGoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SecondaryGoogleService-Info.plist"; sourceTree = "<group>"; };
 		3697F6DB1E3537A8004D5DD4 /* GifterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifterTableViewController.swift; sourceTree = "<group>"; };
 		3697F6DD1E353850004D5DD4 /* GifterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifterTableViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 				3648504E1E3465A9004B73DE /* RecipientTableViewCell.swift */,
 				364850501E3471CF004B73DE /* GifterCollectionViewCell.swift */,
 				3697F6DD1E353850004D5DD4 /* GifterTableViewCell.swift */,
+				361F0E5F1E395A6D0006B2E1 /* NotificationTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -194,8 +201,9 @@
 			isa = PBXGroup;
 			children = (
 				36AE1FC31E33F7880053922A /* HomeViewController.swift */,
-				3697F6E91E3582ED004D5DD4 /* Account */,
+				361F0E5D1E3953230006B2E1 /* InboxTableViewController.swift */,
 				3648504B1E345ED3004B73DE /* New Gift */,
+				3697F6E91E3582ED004D5DD4 /* Account */,
 				364850461E343963004B73DE /* View */,
 			);
 			name = Controller;
@@ -219,6 +227,7 @@
 				3697F6E31E356FF3004D5DD4 /* Gift.swift */,
 				3697F6E51E357070004D5DD4 /* Gifter.swift */,
 				3697F6E71E357CE3004D5DD4 /* UserGift.swift */,
+				364D0BC11E38DDF7004091E2 /* UserNotifications.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -378,6 +387,7 @@
 				3648504A1E345EB9004B73DE /* RecipientTableViewController.swift in Sources */,
 				3697F6DE1E353850004D5DD4 /* GifterTableViewCell.swift in Sources */,
 				36AE1FCC1E3425190053922A /* LoadSongsHelperViewController.swift in Sources */,
+				361F0E601E395A6D0006B2E1 /* NotificationTableViewCell.swift in Sources */,
 				3648504F1E3465A9004B73DE /* RecipientTableViewCell.swift in Sources */,
 				36AE1FA21E33CED40053922A /* AppDelegate.swift in Sources */,
 				36D55D921E3631C80018CF6D /* RecordGiftViewController.swift in Sources */,
@@ -391,7 +401,9 @@
 				36AE1FC41E33F7880053922A /* HomeViewController.swift in Sources */,
 				36AE1FD31E34268B0053922A /* FirebaseSongHandler.swift in Sources */,
 				36AE1FD71E342C1A0053922A /* GiftTableViewController.swift in Sources */,
+				364D0BC21E38DDF7004091E2 /* UserNotifications.swift in Sources */,
 				36AE1FC81E3403C60053922A /* FirebaseImageHandler.swift in Sources */,
+				361F0E5E1E3953230006B2E1 /* InboxTableViewController.swift in Sources */,
 				364850511E3471CF004B73DE /* GifterCollectionViewCell.swift in Sources */,
 				3697F6EB1E359266004D5DD4 /* HomeCollectionViewCell.swift in Sources */,
 				3697F6ED1E359861004D5DD4 /* UserByEmailViewController.swift in Sources */,

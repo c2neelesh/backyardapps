@@ -35,6 +35,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         FirebaseUserOperation.isUserAuthenticated { (firUser) in
             if let _ = firUser {
+                self.tabBarController?.selectedIndex = 0
                 self.handleGiftTypeChange(selectedIndex: self.giftTypeSelector.selectedSegmentIndex)
 
             } else {
